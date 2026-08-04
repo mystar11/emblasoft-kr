@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import TechnicalArticle from "../TechnicalArticle";
+export const metadata: Metadata = { title: "Ericsson·Samsung·Nokia 장비 간 상호운용 시험", description: "Ericsson, Samsung, Nokia가 혼재한 5G 환경에서 필요한 상호운용 시험 항목과 판정 방법입니다." };
+export default function Page(){return <TechnicalArticle category="INTEROPERABILITY" title="Ericsson·Samsung·Nokia 장비 간 상호운용 시험" dek="벤더 이름을 비교하는 시험이 아니라 인터페이스와 절차의 경계를 검증하는 작업입니다." read="9" lead="Ericsson, Samsung, Nokia 장비가 혼재한 환경에서 상호운용 문제를 단순히 어느 벤더의 결함이라고 접근하면 해결이 늦어집니다. 표준에 허용된 선택사항, 타이머 기본값, 원인 코드 처리와 기능 출시 시점이 다를 수 있기 때문입니다. 시험은 벤더 평가보다 경계 조건을 재현하고 책임 구간을 좁히는 데 초점을 맞춰야 합니다." sections={[
+{title:"지원 기능과 선택사항을 먼저 맞춥니다",paragraphs:["동일한 3GPP 릴리스를 표기해도 실제 지원 기능과 활성화 조건은 다를 수 있습니다. RAN과 Core의 기능 목록, 단말 지원 밴드와 조합, 인터페이스 옵션, 보안 알고리즘, QoS와 슬라이스 정책을 사전에 대조합니다.","시험 중 발견된 차이가 규격 위반인지 미지원 옵션인지 구성 불일치인지 구분할 기준을 이 단계에서 정합니다."]},
+{title:"이동성과 세션 연속성을 우선 검증합니다",paragraphs:["서로 다른 벤더의 셀 경계에서 Handover와 재접속을 반복하고 음성, 영상, 데이터 세션이 유지되는지 확인합니다. 무선 품질을 단계적으로 낮추고 부하를 높여 경계값 근처의 타이머와 재시도 동작을 관찰합니다.","SA에서는 N2/N3 경로, PDU Session과 QoS Flow의 유지 여부를 보고, NSA에서는 LTE 앵커와 NR Secondary Node 변경을 함께 확인합니다."]},
+{title:"Core와 RAN의 원인값을 시간순으로 맞춥니다",paragraphs:["상호운용 결함은 한 장비의 로그만 보면 상대 장비가 먼저 연결을 끊은 것처럼 보이는 경우가 많습니다. UE, RAN, Core, 전송 구간의 패킷 트레이스와 장비 로그를 동일한 시간 기준으로 정렬해야 최초 이상 동작을 찾을 수 있습니다.","실패 시에는 재현 조건, 최초 비정상 메시지, 기대 동작, 실제 동작과 영향 서비스를 한 묶음으로 기록합니다. 이는 벤더 간 책임 공방보다 수정 속도를 높이는 자료가 됩니다."],quote:"상호운용 시험의 좋은 결과는 누가 틀렸는지를 말하는 것이 아니라 어디서 기대 동작이 달라졌는지를 재현 가능하게 보여줍니다."},
+{title:"릴리스 변경마다 핵심 조합을 다시 확인합니다",paragraphs:["벤더별 릴리스 일정이 다르므로 한 번 승인한 조합도 영구적으로 유효하지 않습니다. 영향도가 높은 단말과 셀 경계, 음성, 긴급통화, 정책, 장애복구 시나리오는 골든 세트로 유지합니다.","신규 릴리스 투입 전에는 골든 세트를 자동 실행하고 이전 결과와 차이를 비교해 성능 저하와 회귀 결함을 조기에 차단합니다."]}
+]} closing="Emblasoft의 독립적인 UE·gNodeB 에뮬레이션과 분석 도구는 특정 벤더에 치우치지 않은 반복 조건과 공통 KPI를 제공해 상호운용 문제의 재현성을 높입니다."/>}
