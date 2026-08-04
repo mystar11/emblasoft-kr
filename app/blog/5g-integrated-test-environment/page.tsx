@@ -1,3 +1,5 @@
+import ArticleVisuals from "../ArticleVisuals";
+
 const scope = [
   ["UE EMULATION", "등록·인증·이동·Handover", "Voice · Video · Data · IoT"],
   ["RAN / TRANSPORT", "gNodeB와 전송 구간", "Latency · Loss · QoS"],
@@ -17,6 +19,7 @@ export default function IntegratedTestArticle() {
 
       <div className="articleShell articleBody">
         <p className="articleLead">5G 시험은 특정 Core 노드나 UPF의 성능 확인만으로 끝나지 않습니다. 실제 UE 동작과 서비스 트래픽을 재현하고 RAN, 전송망, Core, IMS와 애플리케이션까지 전체 서비스 체인을 검증해야 합니다. 구축 단계의 시험환경에서 공식 인수시험, 운영 단계의 통합 모니터링까지 연결되어야 시험 자산의 가치가 커집니다.</p>
+        <ArticleVisuals topic="e2e" />
 
         <section id="architecture"><p className="sectionNo">01</p><h2>시험 대상은 5G 전체 서비스 체인</h2><p>실제 가입자 서비스는 UE와 RAN에서 시작해 전송망, 5G Core, IMS, Edge·Cloud 애플리케이션을 연속적으로 통과합니다. 개별 장비나 단일 인터페이스의 규격 적합성만으로는 가입자 QoE와 E2E 품질을 설명하기 어렵습니다.</p>
           <div className="networkFlow">{scope.map((s,i)=><div className="flowWrap" key={s[0]}><div className="flowNode"><small>{s[0]}</small><b>{s[1]}</b><span>{s[2]}</span></div>{i<scope.length-1&&<i>→</i>}</div>)}</div>

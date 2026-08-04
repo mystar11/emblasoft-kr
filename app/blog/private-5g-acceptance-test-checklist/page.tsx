@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ArticleVisuals from "../ArticleVisuals";
 
 export const metadata: Metadata = {
   title: "Private 5G 구축 전 인수시험 체크리스트",
@@ -24,6 +25,7 @@ export default function Private5GAcceptanceArticle() {
       <section className="articleHero"><div className="articleShell"><p className="articleMeta">PRIVATE 5G <span>·</span> 2026.08.04 <span>·</span> 9 MIN READ</p><h1>Private 5G 구축 전<br/>인수시험 체크리스트</h1><p className="articleDek">“연결된다”를 넘어 실제 업무 서비스를 안정적으로 운영할 수 있는지 검증하는 방법</p><div className="author"><b>BumJun Lee (BJ)</b><span>Emblasoft Korea</span></div></div></section>
       <div className="articleShell articleBody">
         <p className="articleLead">Private 5G는 공장, 물류센터, 병원, 캠퍼스처럼 서비스 중단의 영향이 큰 현장에 구축됩니다. 따라서 인수시험은 단순 커버리지와 최대 처리량 측정이 아니라 실제 단말, 업무 트래픽, 장애 조건과 운영 절차를 하나의 시나리오로 검증해야 합니다.</p>
+        <ArticleVisuals topic="private5g" />
 
         <section><p className="sectionNo">01</p><h2>먼저 ‘합격’의 기준을 숫자로 정의합니다</h2><p>시험을 시작하기 전에 서비스별 KPI와 측정 조건을 확정해야 합니다. 평균값만 제시하면 순간적인 지연 증가나 특정 구역의 품질 저하가 가려질 수 있습니다. 지연시간은 평균과 상위 백분위 값을 함께 보고, 처리량·패킷 손실·접속 성공률·Handover 성공률·복구시간을 업무 영향과 연결해 정의하는 것이 좋습니다.</p><blockquote>좋은 인수시험 기준은 장비 사양이 아니라, 현장의 업무가 허용할 수 있는 한계에서 출발합니다.</blockquote></section>
 
