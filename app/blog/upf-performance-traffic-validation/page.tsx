@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import TechnicalArticle from "../TechnicalArticle";
+export const metadata: Metadata = { title: "UPF 성능 및 트래픽 검증 방법", description: "5G UPF의 처리량, 세션 규모, 지연, QoS와 장애복구를 현실적인 트래픽으로 검증하는 방법입니다." };
+export default function Page(){return <TechnicalArticle category="5G CORE" title="UPF 성능 및 트래픽 검증 방법" dek="최대 처리량 한 줄보다 세션, 패킷 특성, 정책과 장애 조건이 결과를 좌우합니다." read="9" lead="UPF 시험에서 가장 자주 인용되는 수치는 Gbps 또는 pps입니다. 그러나 상용망의 UPF는 서로 다른 패킷 크기와 QoS Flow, NAT·필터링·과금 기능을 처리하면서 세션 생성과 해제를 계속 수행합니다. 실제 용량을 판단하려면 데이터시트의 최대값이 아니라 운영 프로파일에서의 지속 가능한 성능을 확인해야 합니다." sections={[
+{title:"용량의 단위를 하나로 두지 않습니다",paragraphs:["대용량 패킷의 Gbps와 소형 패킷의 pps는 시스템에 다른 부담을 줍니다. 여기에 동시 PDU Session 수, 초당 세션 설정·해제율, QoS Flow 수가 더해집니다. CPU 코어 수와 NUMA 배치, NIC 큐, 가상화 방식도 결과에 포함해야 합니다.","시험 보고서에는 각 지표를 독립된 최고값으로 제시하기보다 동일 시점에 달성한 복합 부하와 자원 사용률을 기록하는 편이 실용적입니다."]},
+{title:"트래픽 모델을 서비스 구성에 맞춥니다",paragraphs:["인터넷 데이터, 영상, 음성, 게임, IoT와 기업용 트래픽은 패킷 크기와 버스트 특성이 다릅니다. 상·하향 비율, IPv4·IPv6, GTP-U 터널 수, DNN과 슬라이스 분포도 실제 계획에 맞춰야 합니다.","평균 부하만 유지하지 말고 Busy Hour의 점진적 증가, 순간 버스트와 Elephant Flow를 섞어 큐잉 지연과 공정성이 무너지는 지점을 확인합니다."]},
+{title:"기능을 켠 상태에서 성능을 측정합니다",paragraphs:["QoS, ULCL, 트래픽 스티어링, 사용량 보고, ACL, NAT와 Lawful Interception 연계 등 운영에 필요한 기능을 끄면 좋은 수치를 얻을 수 있지만 실제 설계 용량과는 거리가 생깁니다.","기능 조합별 기준선을 만들고 처리량뿐 아니라 PDU Session 성공률, 패킷 손실, 지연의 상위 백분위, 순서 뒤바뀜과 과금 레코드 정확성을 함께 봅니다."],quote:"UPF의 성능은 가장 빠른 조건이 아니라 실제 기능을 켠 상태에서 SLA를 지킬 수 있는 한계로 정의해야 합니다."},
+{title:"장애와 장시간 부하에서 여유를 확인합니다",paragraphs:["노드·링크 장애, UPF 재선택, 이중화 전환과 증설 과정에서 기존 세션과 신규 세션이 어떻게 처리되는지 측정합니다. 짧은 벤치마크를 통과해도 수 시간 또는 수일의 Soak Test에서 메모리 증가, 성능 진동이나 제어 평면 재시도가 나타날 수 있습니다.","최종 용량에는 정상 운용 여유와 장애 시 재분배 부하를 반영해야 합니다. 평균 CPU가 낮다는 이유만으로 충분한 여유가 있다고 판단해서는 안 됩니다."]}
+]} closing="Emblasoft는 UE 절차와 다양한 서비스 트래픽을 결합해 UPF의 기능·성능·확장성·복구를 같은 시험 체계에서 검증할 수 있도록 지원합니다."/>}
