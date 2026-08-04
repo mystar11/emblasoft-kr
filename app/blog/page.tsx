@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-
 export const metadata: Metadata = { title: "기술 블로그", description: "5G·5G-Advanced·6G 네트워크 시험, UE 에뮬레이션, 자동화 및 서비스 보증 인사이트" };
-
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const posts = [
-  { slug: "private-5g-acceptance-test-checklist", category: "PRIVATE 5G", date: "2026.08.04", read: "9 MIN", title: "Private 5G 구축 전 인수시험 체크리스트", summary: "커버리지와 처리량을 넘어 UE 등록, 서비스 품질, 장애복구, 보안과 운영 가시성까지 확인하는 실무 체크리스트입니다.", tags: ["Private 5G", "Acceptance Test", "KPI"] },
-  { slug: "5g-integrated-test-environment", category: "5G E2E TEST", date: "2026.08.04", read: "8 MIN", title: "5G 네트워크 통합 시험환경은 어떻게 구축해야 하는가", summary: "UE 에뮬레이션부터 인수시험, Active/Passive Monitoring까지 하나의 검증 체계로 연결하는 방법을 소개합니다.", tags: ["5G", "UE Emulation", "Monitoring"] },
-  { slug: "why-real-ue-traffic-models-matter", category: "TEST STRATEGY", date: "2026.08.04", read: "5 MIN", title: "실제 UE 행동과 트래픽 모델이 중요한 이유", summary: "단순 처리량 시험을 넘어 가입자 행동, 서비스 믹스, 장애 조건을 함께 검증해야 하는 이유를 정리합니다.", tags: ["UE", "Traffic Model", "QoE"] },
+  { slug:"lab-to-field-service-assurance",category:"LAB-TO-FIELD",read:"9 MIN",title:"Lab-to-Field 검증 및 서비스 품질 보증",summary:"연구실의 반복 시험을 현장 인수와 운영망의 지속적인 서비스 보증으로 연결하는 방법입니다.",tags:["Service Assurance","Field Test","QoE"] },
+  { slug:"ericsson-samsung-nokia-interoperability",category:"INTEROPERABILITY",read:"9 MIN",title:"Ericsson·Samsung·Nokia 장비 간 상호운용 시험",summary:"멀티벤더 경계에서 이동성, 세션 연속성과 원인 분석을 재현 가능하게 검증합니다.",tags:["Ericsson","Samsung","Nokia"] },
+  { slug:"korea-multivendor-validation",category:"MULTI-VENDOR",read:"9 MIN",title:"국내 이동통신사 환경에 맞는 멀티벤더 검증",summary:"국내 상용망의 혼합 장비, 비동기 릴리스와 운영 조건을 반영한 검증 전략입니다.",tags:["Multi-vendor","Korea","Regression"] },
+  { slug:"5g-advanced-6g-test-readiness",category:"5G-ADVANCED · 6G",read:"10 MIN",title:"5G Advanced와 6G 시험환경 준비 전략",summary:"기존 5G 시험 자산을 재사용 가능한 시나리오, 데이터와 자동화 기반으로 확장합니다.",tags:["5G-Advanced","6G","Automation"] },
+  { slug:"upf-performance-traffic-validation",category:"5G CORE",read:"9 MIN",title:"UPF 성능 및 트래픽 검증 방법",summary:"최대 처리량을 넘어 세션, 서비스 믹스, 정책, 장애와 장시간 부하를 검증합니다.",tags:["UPF","Traffic","Performance"] },
+  { slug:"5g-nsa-vs-sa-test-environment",category:"5G TEST STRATEGY",read:"9 MIN",title:"5G NSA·SA 시험환경 비교",summary:"NSA의 LTE 앵커와 SA의 5G Core 절차, 전환 구간을 구분해 시험하는 방법입니다.",tags:["NSA","SA","5G Core"] },
+  { slug:"active-vs-passive-monitoring",category:"SERVICE ASSURANCE",read:"8 MIN",title:"Active Monitoring과 Passive Monitoring의 차이",summary:"선제적 서비스 확인과 실제 가입자 관찰을 결합해 탐지부터 재검증까지 연결합니다.",tags:["Active","Passive","Monitoring"] },
+  { slug:"private-5g-acceptance-test-checklist",category:"PRIVATE 5G",read:"9 MIN",title:"Private 5G 구축 전 인수시험 체크리스트",summary:"UE 등록, 커버리지, QoS, 장애복구, 보안과 운영 가시성을 확인하는 실무 체크리스트입니다.",tags:["Private 5G","Acceptance Test","KPI"] },
+  { slug:"5g-integrated-test-environment",category:"5G E2E TEST",read:"8 MIN",title:"5G Core부터 RAN까지 통합 시험하는 방법",summary:"UE와 RAN, 전송, Core, 서비스까지 하나의 E2E 검증 체계로 연결합니다.",tags:["RAN","5G Core","E2E"] },
+  { slug:"why-real-ue-traffic-models-matter",category:"TEST STRATEGY",read:"7 MIN",title:"실제 UE 에뮬레이션이 5G 시험에서 중요한 이유",summary:"가입자의 상태 변화와 서비스 트래픽을 반복 가능한 조건으로 재현해야 하는 이유입니다.",tags:["UE Emulation","Traffic Model","QoE"] },
 ];
-
-export default function BlogIndex() {
-  return <main className="blogIndex">
-    <header className="nav shell articleNav"><a className="brand" href={`${basePath}/`}><span className="brandMark">✣</span>emblasoft <b>KOREA</b></a><nav><a href={`${basePath}/`}>홈</a><a href={`${basePath}/blog/`}>기술 블로그</a><a href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">기술 문의</a></nav></header>
-    <section className="blogIndexHero"><div className="shell"><p className="eyebrow">EMBLASOFT KOREA TECH BLOG</p><h1>네트워크 시험을<br/>현장의 언어로 설명합니다.</h1><p>5G E2E 검증, UE·gNodeB 에뮬레이션, 자동화, Active/Passive Monitoring과 5G-Advanced·6G 진화에 관한 기술 인사이트입니다.</p></div></section>
-    <section className="shell blogList"><div className="blogListHead"><div><p className="eyebrow dark">LATEST ARTICLES</p><h2>기술 아티클</h2></div><p>현장에서 바로 활용할 수 있는 시험 설계와 운영 노하우를 공유합니다.</p></div>
-      <div className="postGrid">{posts.map((post, i) => <article className={i === 0 ? "featuredPost" : ""} key={post.slug}><div className="postMeta"><span>{post.category}</span><span>{post.date} · {post.read}</span></div><h3>{post.title}</h3><p>{post.summary}</p><div className="postFooter"><div>{post.tags.map(tag => <small key={tag}>#{tag}</small>)}</div><a href={`${basePath}/blog/${post.slug}/`}>읽기 →</a></div></article>)}</div>
-    </section>
-    <footer className="shell articleFooter"><div className="brand"><span className="brandMark">✣</span>emblasoft <b>KOREA</b></div><p>Network testing and service assurance</p><small>© 2026 Emblasoft Korea</small></footer>
-  </main>;
-}
+export default function BlogIndex(){return <main className="blogIndex"><header className="nav shell articleNav"><a className="brand" href={`${basePath}/`}><span className="brandMark">✣</span>emblasoft <b>KOREA</b></a><nav><a href={`${basePath}/`}>홈</a><a href={`${basePath}/blog/`}>기술 블로그</a><a href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">기술 문의</a></nav></header><section className="blogIndexHero"><div className="shell"><p className="eyebrow">EMBLASOFT KOREA TECH BLOG</p><h1>네트워크 시험을<br/>현장의 언어로 설명합니다.</h1><p>5G E2E 검증, UE·gNodeB 에뮬레이션, 자동화, Active/Passive Monitoring과 5G-Advanced·6G 진화에 관한 기술 인사이트입니다.</p></div></section><section className="shell blogList"><div className="blogListHead"><div><p className="eyebrow dark">TECHNICAL ARTICLES</p><h2>기술 아티클</h2></div><p>현장에서 바로 활용할 수 있는 시험 설계와 운영 경험을 공유합니다.</p></div><div className="postGrid">{posts.map((post,i)=><article className={i===0?"featuredPost":""} key={post.slug}><div className="postMeta"><span>{post.category}</span><span>2026.08.04 · {post.read}</span></div><h3>{post.title}</h3><p>{post.summary}</p><div className="postFooter"><div>{post.tags.map(tag=><small key={tag}>#{tag}</small>)}</div><a href={`${basePath}/blog/${post.slug}/`}>읽기 →</a></div></article>)}</div></section><footer className="shell articleFooter"><div className="brand"><span className="brandMark">✣</span>emblasoft <b>KOREA</b></div><p>Network testing and service assurance</p><small>© 2026 Emblasoft Korea</small></footer></main>}
