@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import TechnicalArticle from "../TechnicalArticle";
+export const metadata: Metadata = { title: "Active Monitoring과 Passive Monitoring의 차이", description: "5G 서비스 보증에서 Active와 Passive Monitoring의 역할, 적용 기준과 결합 방법을 설명합니다." };
+export default function Page(){return <TechnicalArticle category="SERVICE ASSURANCE" title="Active Monitoring과 Passive Monitoring의 차이" dek="두 방식은 경쟁 관계가 아니라 서로 다른 질문에 답하는 운영 도구입니다." read="8" lead="망이 정상이라는 사실과 가입자가 정상적인 서비스를 경험한다는 사실은 같지 않습니다. Active Monitoring은 통제된 시험 트래픽으로 서비스 가능 여부를 확인하고, Passive Monitoring은 실제 가입자 트래픽을 관찰해 현장에서 일어난 일을 설명합니다. 어느 하나만으로는 서비스 품질의 전체 그림을 보기 어렵습니다." sections={[
+{title:"Active Monitoring은 의도한 조건을 반복합니다",paragraphs:["Active 방식은 지정한 위치와 시간에 UE 등록, 데이터 세션, 음성·영상·업무 애플리케이션 접속을 실행합니다. 실제 장애가 발생하기 전에 서비스 경로를 선제적으로 확인할 수 있고, 같은 조건을 반복하므로 지역·슬라이스·릴리스 간 비교가 가능합니다.","다만 합성 트래픽은 설계한 시나리오 밖의 현상을 스스로 보여주지는 않습니다. 따라서 시험 빈도와 부하를 운영망에 영향을 주지 않는 범위로 정하고, 실제 서비스의 인증과 QoS 정책을 충분히 반영해야 합니다."],points:["서비스 가용성과 SLA의 정기 점검","신규 사이트 개통과 변경 전후 비교","야간·비혼잡 시간의 선제적 회귀시험"]},
+{title:"Passive Monitoring은 실제 이용자의 경험을 보여줍니다",paragraphs:["Passive 방식은 제어 평면과 사용자 평면에서 실제 세션을 관찰합니다. 특정 단말, 셀, APN·DNN, 슬라이스 또는 서비스에서 실패율과 지연이 높아지는 패턴을 찾는 데 강합니다.","관찰 결과는 실제 수요를 반영하지만, 트래픽이 없으면 상태를 확인할 수 없고 암호화나 수집 지점에 따라 가시성이 달라집니다. 모든 패킷을 저장하기보다 필요한 KPI와 메타데이터를 정의하고 개인정보와 보존정책을 함께 설계해야 합니다."]},
+{title:"두 데이터를 같은 시간축에서 비교합니다",paragraphs:["Active 시험 실패가 확인되면 같은 시간대의 실제 가입자 세션, NF 알람, 구성 변경 이력과 자원 사용률을 함께 봅니다. 반대로 Passive 분석에서 특정 지역의 품질 저하가 발견되면 Active 시나리오로 조건을 고정해 재현 여부를 확인합니다.","이렇게 해야 탐지와 원인 분석, 수정 후 검증이 하나의 폐쇄형 절차로 연결됩니다."],quote:"Active는 지금 이 서비스가 동작하는지를 묻고, Passive는 실제 이용자에게 무슨 일이 일어났는지를 설명합니다."},
+{title:"선택 기준은 운영 목적에서 출발합니다",paragraphs:["SLA 감시와 개통 검증이 우선이면 Active 비중을 높이고, 대규모 가입자의 실제 품질과 장애 원인 분석이 중요하면 Passive 가시성을 넓혀야 합니다. 상용망에서는 두 방식의 KPI 명칭, 시간 동기, 가입자·세션 식별 기준을 맞추는 일이 제품 선택만큼 중요합니다."]}
+]} closing="Emblasoft의 Active 시험과 Passive 분석을 동일한 UE·서비스·KPI 기준으로 설계하면 장애 발견에서 재현, 수정 확인까지 시간을 줄일 수 있습니다."/>}
