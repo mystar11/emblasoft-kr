@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import TechnicalArticle from "../TechnicalArticle";
+export const metadata: Metadata = { title: "5G NSA·SA 시험환경 비교", description: "5G NSA와 SA의 구조 차이가 시험 범위, UE 시나리오와 KPI에 미치는 영향을 설명합니다." };
+export default function Page(){return <TechnicalArticle category="5G TEST STRATEGY" title="5G NSA·SA 시험환경 비교" dek="무선 세대의 차이보다 제어 경로와 서비스 구조의 차이를 시험해야 합니다." read="9" lead="NSA와 SA는 5G NR을 사용한다는 점은 같지만 가입자 등록, 이동성, 세션 제어와 정책 적용 경로가 다릅니다. NSA 시험 구성을 SA에 그대로 적용하면 핵심 절차가 빠지고, 반대로 SA 항목만으로 NSA를 평가하면 LTE 앵커와 이중연결에서 발생하는 문제를 놓칠 수 있습니다." sections={[
+{title:"NSA는 LTE 앵커와 이중연결을 함께 봅니다",paragraphs:["NSA에서는 EPC와 LTE eNodeB가 제어의 중심에 있고 NR이 주로 추가 용량을 제공합니다. 따라서 EN-DC 설정, LTE와 NR 간 자원 결합, Secondary Node 추가·변경·해제, NR 커버리지 이탈 시 서비스 연속성이 핵심입니다.","처리량만 측정하면 LTE 앵커의 시그널링 병목이나 셀 조합별 편차가 가려질 수 있습니다. LTE와 NR의 무선 조건을 각각 바꾸면서 UE 상태와 사용자 평면 경로를 함께 기록해야 합니다."],points:["EN-DC 설정 성공률과 실패 원인","LTE·NR 셀 조합별 처리량과 지연","NR 추가·해제 과정의 패킷 손실과 서비스 연속성"]},
+{title:"SA는 5G Core 절차와 정책이 중심입니다",paragraphs:["SA에서는 5G Core의 AMF, SMF, UPF, UDM, PCF 등 서비스 기반 구조가 실제 가입자 경험에 직접 연결됩니다. 등록과 인증, PDU Session, DNN, S-NSSAI, QoS Flow, 로컬 브레이크아웃을 절차 단위로 확인해야 합니다.","VoNR, 네트워크 슬라이싱, Edge 서비스처럼 SA에서 본격화되는 기능은 정상 절차뿐 아니라 정책 불일치, NF 장애, 재시도와 복구 조건도 포함해야 합니다."]},
+{title:"전환 구간은 별도의 시험 영역입니다",paragraphs:["현실의 망은 NSA와 SA가 일정 기간 공존합니다. 단말의 SA 지원 여부, 커버리지, 로밍과 음성 정책에 따라 접속 방식이 달라지므로 NSA와 SA의 개별 합격만으로 전환 품질을 보장할 수 없습니다.","SA에서 VoNR이 불가능할 때 EPS Fallback이 정상 수행되는지, 이동 중 세션과 과금 연속성이 유지되는지, 동일 가입자 정책이 EPC와 5GC에서 일관되게 적용되는지를 확인해야 합니다."]},
+{title:"공통 KPI와 구조별 KPI를 분리합니다",paragraphs:["접속 성공률, 지연, 손실, 처리량, 서비스 성공률은 공통 기준으로 유지하면 세대 전환의 영향을 비교하기 쉽습니다. 그 위에 NSA의 EN-DC와 SA의 PDU Session·Slice·QoS Flow 지표를 별도로 둡니다.","시험 결과에는 단순 평균뿐 아니라 부하 단계, 셀 조합, 단말 모델, 소프트웨어 버전과 상위 백분위 지연을 함께 남겨야 재현이 가능합니다."]}
+]} closing="Evolver 기반 UE·RAN 에뮬레이션으로 NSA와 SA의 가입자 절차를 동일한 서비스 모델에서 반복하면 전환 과정의 위험을 정량적으로 비교할 수 있습니다."/>}
