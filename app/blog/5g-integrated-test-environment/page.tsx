@@ -13,7 +13,7 @@ export default function IntegratedTestArticle() {
     <header className="nav shell articleNav"><a className="brand" href={`${basePath}/`}><span className="brandMark">✣</span>emblasoft <b>KOREA</b></a><nav><a href={`${basePath}/`}>홈</a><a href={`${basePath}/blog/`}>전체 글</a><a href="#monitoring">모니터링</a><a href="#future">5G-A·6G</a></nav><a className="navCta" href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">기술 문의</a></header>
 
     <article>
-      <section className="articleHero"><div className="articleShell"><p className="articleMeta">TECH-BLOG <span>·</span> 2026.08 <span>·</span> 8 MIN READ</p><h1>5G 네트워크 통합 시험환경은<br/>어떻게 구축해야 하는가</h1><p className="articleDek">UE 에뮬레이션·트래픽 모델링·인수시험·Active/Passive Monitoring을 하나의 검증 체계로 연결하고, 5G-Advanced와 6G로 확장하는 방법</p><div className="author"><b>BumJun Lee (BJ)</b><span>Emblasoft 한국지사장</span></div></div></section>
+      <section className="articleHero"><div className="articleShell"><p className="articleMeta">TECH-BLOG <span>·</span> 2026.08 <span>·</span> 8 MIN READ</p><h1>5G Core부터 RAN까지<br/>통합 시험하는 방법</h1><p className="articleDek">UE 에뮬레이션·트래픽 모델링·인수시험·Active/Passive Monitoring을 하나의 검증 체계로 연결하고, 5G-Advanced와 6G로 확장하는 방법</p><div className="author"><b>BumJun Lee (BJ)</b><span>Emblasoft 한국지사장</span></div></div></section>
 
       <div className="articleShell articleBody">
         <p className="articleLead">5G 시험은 특정 Core 노드나 UPF의 성능 확인만으로 끝나지 않습니다. 실제 UE 동작과 서비스 트래픽을 재현하고 RAN, 전송망, Core, IMS와 애플리케이션까지 전체 서비스 체인을 검증해야 합니다. 구축 단계의 시험환경에서 공식 인수시험, 운영 단계의 통합 모니터링까지 연결되어야 시험 자산의 가치가 커집니다.</p>
