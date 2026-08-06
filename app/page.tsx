@@ -23,7 +23,7 @@ export default function Home() {
             <p className="eyebrow">NETWORK TESTING, MADE ACTIONABLE</p>
             <h1>복잡한 네트워크를<br/><em>확신</em>으로 바꿉니다.</h1>
             <p className="lead">UE·gNodeB 에뮬레이션과 실제 트래픽 모델링으로 RAN–전송–Core–서비스를 검증하고, 구축·인수시험부터 Active/Passive Monitoring까지 하나의 환경으로 연결합니다.</p>
-            <div className="actions"><a className="primary" href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">데모 체험 요청 <span>↗</span></a><a className="secondary" href={`${basePath}/blog/5g-integrated-test-environment/`}>통합 시험환경 알아보기 →</a></div>
+            <div className="actions"><a className="primary" href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">데모 체험 요청 <span>↗</span></a><a className="secondary" href={`${basePath}/blog/cpe-automation-sip-ims/`}>통합 시험환경 알아보기 →</a></div>
             <div className="proof"><span><b>5G</b> End-to-End</span><span><b>Lab</b> to Field</span><span><b>Future</b> 5G-A · 6G</span></div>
           </div>
           <div className="signal" aria-label="네트워크 성능 시각화">
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="cards">{solutions.map((s)=><article key={s.n}><span>{s.n}</span><div className="icon">{s.n === "01" ? "⌁" : s.n === "02" ? "◫" : "◎"}</div><h3>{s.title}</h3><p>{s.text}</p><a href="#demo">Learn more →</a></article>)}</div>
       </section>
 
-      <section className="blogFeature"><div className="shell blogFeatureGrid"><div><p className="eyebrow dark">LATEST TECH ARTICLE</p><h2>5G 네트워크 통합 시험환경은<br/>어떻게 구축해야 하는가</h2><p>UE 에뮬레이션, 트래픽 모델링, 인수시험, Active/Passive Monitoring을 연결하고 5G-Advanced·6G로 확장하는 방법을 정리했습니다.</p></div><a className="articleLink" href={`${basePath}/blog/5g-integrated-test-environment/`}><span>TECH-BLOG · 2026.08</span><b>기술 글 읽기</b><i>↗</i></a></div></section>
+      <section className="blogFeature"><div className="shell blogFeatureGrid"><div><p className="eyebrow dark">LATEST TECH ARTICLE</p><h2>CPE 테스트, 아직도<br/>수작업으로 하나요?</h2><p>등록·재등록부터 SIP 오류, 유지보수 모드, 긴급통화까지 CPE 상태 변화를 자동화하고 CI/CD/CT로 연결하는 방법을 정리했습니다.</p></div><a className="articleLink" href={`${basePath}/blog/5g-integrated-test-environment/`}><span>TECH-BLOG · 2026.08.06</span><b>기술 글 읽기</b><i>↗</i></a></div></section>
 
       <section className="lab" id="demo"><div className="shell labGrid"><div><p className="eyebrow">TRY BEFORE YOU DECIDE</p><h2>데모에서 PoC까지,<br/>필요한 만큼 시작하세요.</h2><p>초기 관심 단계부터 실제 고객 환경의 기술 검증까지 이어지는 단계별 체험 모델입니다.</p><a className="primary light" href="https://emblasoft.com/about/contact" target="_blank" rel="noreferrer">Korea Lab 데모 문의 ↗</a></div><ol><li><b>Instant Demo</b><span>핵심 기능과 활용 시나리오를 빠르게 확인</span></li><li><b>Korea Lab Edition</b><span>가이드와 샘플 트래픽으로 직접 테스트</span></li><li><b>Assisted PoC</b><span>고객 환경에 맞춘 기술 검증과 결과 분석</span></li></ol></div></section>
 
