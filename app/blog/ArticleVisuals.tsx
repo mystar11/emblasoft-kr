@@ -63,6 +63,18 @@ const examples: Record<string, TestExample> = {
       {metric:"이중화 복구시간",threshold:"≤ 3초",expected:"1.5~2.8초",interpretation:"인수 가능 예상. 기존 세션 손실 여부는 평균값과 별도로 판정해야 합니다."},
     ],
   },
+  cpe: {
+    environment: "SIP/IMS CPE Lab · Evolver · DHCP/DNS 에뮬레이션 · IMS/SIP 시험 경로 · 멀티벤더 CPE",
+    topology: ["Evolver에서 SIP 시그널링·미디어와 CPE 상태를 제어", "장비 특성에 따라 REST·SOAP·Telnet·SSH 제어 경로 사용", "DHCP/DNS 조건을 바꿔 등록·재등록 동작 검증", "실행 결과·시간·오류 응답을 중앙에서 동일 형식으로 기록"],
+    load: ["정상 In-Service와 Maintenance/Out-of-Service 상태 전환", "초기 등록·재등록·설정 변경 회귀 시나리오", "SIP 4xx·5xx·6xx 오류 응답과 예외 처리", "유지보수·복구 상태에서 긴급통화 경로 검증"],
+    procedure: ["CPE 모델·펌웨어별 정상 기준선 확보", "등록/재등록과 상태 전이를 자동 반복", "오류 응답·전원 중단 유사 이벤트를 한 조건씩 주입", "복구 후 재등록·긴급통화·서비스 상태와 로그를 판정"],
+    results: [
+      {metric:"Registration / Re-registration",threshold:"정의한 정상 절차 100% 통과",expected:"REGISTER·재등록 성공",interpretation:"모델·펌웨어별 편차가 있으면 SIP 타이머, 주소 설정과 벤더 스택 동작을 분리해 확인합니다."},
+      {metric:"SIP 4xx / 5xx / 6xx",threshold:"사업자 오류처리 정책과 일치",expected:"재시도·종료·상태 유지가 기대값과 일치",interpretation:"오류 코드 자체보다 오류 이후 CPE의 상태와 재시도 동작이 핵심 판정 포인트입니다."},
+      {metric:"Maintenance / Emergency",threshold:"운영·긴급통화 정책 충족",expected:"상태 전환 중 허용된 긴급통화 경로 정상",interpretation:"일반 서비스와 긴급통화의 기대 동작을 구분해 증빙해야 합니다."},
+      {metric:"Recovery",threshold:"복구 후 자동 서비스 정상화",expected:"재등록·서비스 복귀·결과 기록",interpretation:"복구 지연이나 반복 등록이 발생하면 DHCP/DNS, SIP 등록과 장비 상태를 같은 시간축에서 확인합니다."},
+    ],
+  },
   monitoring: {
     environment: "3개 지역 Active Agent · Core/서비스 Passive 수집 · 통합 Service Assurance",
     topology: ["지역별 Evolver Active Agent에서 등록·웹·음성 시험", "nScan이 N2/N3 및 핵심 서비스 세션 관찰", "알람·구성 변경·NF 자원 데이터를 같은 시간축으로 연결", "Passive 이상을 Active 시나리오로 재현하고 수정 후 재검증"],
@@ -184,6 +196,16 @@ const configs: Record<string, VisualConfig> = {
     limits:["현장별 서비스·단말 모델링이 필요", "운영망 보호를 위한 중단 조건 필수", "일회성 시험만으로 장기 품질은 보장 불가"],
     kpis:["Attach success","Coverage service rate","P95 latency","QoS priority","Failover time","Alarm visibility"], sources:[evolver,pureLoad,assurance],
   },
+  cpe: {
+    label:"CPE AUTOMATION LOOP", title:"CPE의 상태 변화를 자동으로 만들고 같은 기준으로 반복 검증합니다",
+    note:"등록·재등록, SIP 오류, 유지보수 모드와 긴급통화를 자동화하면 펌웨어와 설정이 바뀔 때마다 같은 절차로 회귀 검증할 수 있습니다.",
+    flow:[{label:"환경 설정",detail:"DHCP·DNS·Config"},{label:"등록 검증",detail:"Register·Re-register"},{label:"오류·상태",detail:"4xx·5xx·6xx"},{label:"서비스 안전",detail:"Maintenance·Emergency"},{label:"리포트",detail:"CI/CD/CT·Audit"}],
+    headers:["검증 관점","수작업 중심","Evolver 자동화","운영 효과"],
+    compare:[{item:"반복성",left:"작업자별 절차 편차",right:"동일 시나리오 자동 재실행",decision:"릴리스 회귀 기준"},{item:"상태 전이",left:"현장 조작·대기 필요",right:"In-Service·Maintenance 등 원격 제어",decision:"복구·긴급통화 검증"},{item:"증빙",left:"수기 결과 취합",right:"결과·로그·실행 이력 중앙화",decision:"배포·감사 추적"}],
+    strengths:["멀티벤더 CPE를 같은 기준으로 비교", "펌웨어·설정 변경마다 자동 회귀 가능", "정상·오류·복구·긴급통화 상태를 반복 재현"],
+    limits:["장비별 제어 인터페이스와 SIP 스택 차이를 사전 정의", "긴급통화 시험은 실제 사업자 정책과 안전 절차에 맞춰 통제", "자동화 결과 자체가 규제 준수나 인증을 보장하지는 않음"],
+    kpis:["Registration","Re-registration","Error handling","Emergency call","Recovery","Execution time"], sources:[evolver],
+  },
   monitoring: {
     label:"CLOSED-LOOP ASSURANCE", title:"관찰과 검증을 연결해야 장애 조치가 끝납니다",
     note:"nScan이 실가입자 트래픽에서 이상을 찾고 Evolver가 통제된 합성 세션으로 재현·확인하는 구조입니다.",
@@ -270,7 +292,7 @@ export default function ArticleVisuals({ topic }: { topic: keyof typeof configs 
       <div className="exampleEnvironment"><small>예시 대상 환경</small><b>{e.environment}</b></div>
       <div className="exampleColumns">
         <div><small>구성·연결</small><ol>{e.topology.map(x=><li key={x}>{x}</li>)}</ol></div>
-        <div><small>UE·트래픽 부하</small><ol>{e.load.map(x=><li key={x}>{x}</li>)}</ol></div>
+        <div><small>{topic === "cpe" ? "상태·오류 조건" : "UE·트래픽 부하"}</small><ol>{e.load.map(x=><li key={x}>{x}</li>)}</ol></div>
         <div><small>실행 절차</small><ol>{e.procedure.map(x=><li key={x}>{x}</li>)}</ol></div>
       </div>
       <div className="resultTable" role="region" aria-label="예상 테스트 결과표" tabIndex={0}><table><thead><tr><th>측정 KPI</th><th>예시 합격 기준</th><th>정상 예상 결과</th><th>결과 해석</th></tr></thead><tbody>{e.results.map(r=><tr key={r.metric}><th>{r.metric}</th><td>{r.threshold}</td><td>{r.expected}</td><td>{r.interpretation}</td></tr>)}</tbody></table></div>
