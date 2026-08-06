@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Emblasoft Korea",
   },
   description:
-    "UE·gNodeB 에뮬레이션, 실제 트래픽 모델링, 인수시험, Active/Passive Monitoring을 연결하는 5G 네트워크 통합 시험 솔루션을 소개합니다.",
+    "Evolver·nScan·PureLoad·Odin을 중심으로 5G/IMS 기능 검증, 성능·부하 시험, 인수시험, Active/Passive Monitoring을 연결하는 Emblasoft Korea 솔루션을 소개합니다.",
   keywords: [
     "Emblasoft",
     "5G testing",
@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     "network monitoring",
     "5G Advanced",
     "6G testing",
+    "Evolver",
+    "nScan",
+    "PureLoad",
+    "IMS testing",
   ],
   robots: { index: true, follow: true },
   other: {
