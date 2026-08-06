@@ -41,3 +41,36 @@
 .passDot{background:#38a879}.warnDot{background:#d9a43a}.failDot{background:#d9665b}
 @media(max-width:850px){.exampleHeading{grid-template-columns:1fr;gap:16px}.exampleColumns{grid-template-columns:1fr}.exampleColumns>div{border-right:0;border-bottom:1px solid #d8e5e9}.exampleColumns>div:last-child{border-bottom:0}}
 @media(max-width:520px){.exampleHeading{padding:22px 20px}.exampleHeading h3{font-size:21px}.exampleEnvironment{padding:18px 20px}.exampleColumns>div{padding:21px 20px}.resultLegend{align-items:flex-start;flex-direction:column;gap:9px}}
+
+
+/* Main-site solution portfolio and competitive positioning */
+.portfolio{background:#f4f8f9}
+.portfolioHead,.comparisonHead{display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:end;margin-bottom:48px}
+.portfolioHead h2,.comparisonHead h2{font-family:'Noto Sans KR';font-size:40px;line-height:1.35;letter-spacing:-1.8px;margin:0}
+.portfolioHead>p,.comparisonHead>p{color:#627b86;line-height:1.8;margin:0}
+.portfolioGrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #bfd3da;border-left:1px solid #bfd3da}
+.portfolioGrid article{background:#fff;padding:28px 24px 30px;border-right:1px solid #bfd3da;border-bottom:1px solid #bfd3da;min-height:255px}
+.portfolioGrid article>span{font-size:10px;letter-spacing:1px;color:#2a9dbd}
+.portfolioGrid h3{font-size:25px;margin:30px 0 8px}
+.portfolioGrid b{font-size:12px;color:#168aaa}
+.portfolioGrid p{font-size:12px;line-height:1.75;color:#687f88;margin-top:18px}
+.journey{margin-top:34px;background:#082f42;color:#fff;padding:38px 40px 30px}
+.journeyTitle{display:grid;grid-template-columns:.65fr 1.35fr;gap:35px;align-items:end;border-bottom:1px solid #31586a;padding-bottom:24px}
+.journeyTitle .eyebrow{margin:0}.journeyTitle h3{font-family:'Noto Sans KR';font-size:23px;margin:0}
+.journeyFlow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:center;padding:32px 0 24px}
+.journeyFlow>div{min-height:150px}.journeyFlow>div>span{font-size:9px;color:#62c6dc;margin-right:8px}.journeyFlow small{font-size:9px;letter-spacing:1.2px;color:#89adbc}.journeyFlow b{display:block;font-size:15px;margin:17px 0 9px}.journeyFlow p{font-size:11px;line-height:1.65;color:#9eb7c1;margin:0}.journeyFlow i{font-style:normal;color:#61c6dc;font-size:24px}.journeyNote{border-top:1px solid #31586a;margin:0;padding-top:20px;color:#72c8da;font-size:11px;text-align:center;letter-spacing:.3px}
+.homeComparison{background:#fff;padding:105px 0}
+.homeCompare{border-top:1px solid #cbdde3;border-left:1px solid #cbdde3}
+.compareRow{display:grid;grid-template-columns:.7fr 1.15fr 1.45fr}
+.compareRow>*{padding:18px 20px;border-right:1px solid #cbdde3;border-bottom:1px solid #cbdde3;font-size:12px;line-height:1.65}
+.compareRow>b{color:#0b4960}.compareRow>span{color:#617983}.compareRow>strong{color:#126a85;background:#eff9fb;font-weight:600}
+.compareHeader>*{background:#0b3547!important;color:#fff!important;font-size:10px;letter-spacing:.5px}
+.roleNote{display:flex;justify-content:center;align-items:center;gap:13px;background:#e9f5f7;margin:16px 0 48px;padding:16px;font-size:12px;color:#55717d}
+.roleNote>b{color:#0c526a}.roleNote i{font-style:normal;color:#39a7c4;font-size:18px}
+.caseProof{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #bcd2da;border-bottom:1px solid #bcd2da}
+.caseProof>div{padding:26px 28px;border-right:1px solid #bcd2da}.caseProof>div:last-child{border-right:0}
+.caseProof strong{display:block;color:#118aab;font-size:29px;margin-bottom:11px}.caseProof span{font-size:11px;line-height:1.65;color:#647d87}
+.caseSource{display:block;color:#8a9da4;font-size:9px;margin-top:12px;text-align:right}
+@media(max-width:950px){.portfolioGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:850px){.portfolioHead,.comparisonHead,.journeyTitle{grid-template-columns:1fr;gap:18px}.portfolioHead h2,.comparisonHead h2{font-size:33px}.journeyFlow{grid-template-columns:1fr}.journeyFlow>i{transform:rotate(90deg);text-align:center}.compareRow{grid-template-columns:1fr}.compareHeader{display:none}.compareRow>b{background:#eef7f9}.roleNote{align-items:flex-start;flex-direction:column}.roleNote i{display:none}.caseProof{grid-template-columns:1fr}.caseProof>div{border-right:0;border-bottom:1px solid #bcd2da}.caseProof>div:last-child{border-bottom:0}}
+@media(max-width:520px){.portfolioGrid{grid-template-columns:1fr}.journey{padding:28px 22px}.homeComparison{padding:75px 0}.portfolioHead h2,.comparisonHead h2{font-size:29px}.caseProof strong{font-size:25px}}
