@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "기술 블로그", description: "5G·5G-Advanced·6G 네트워크 시험, UE 에뮬레이션, 자동화 및 서비스 보증 인사이트" };
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const posts = [
+  { slug:"mobile-service-lifecycle-automation-evolver",category:"LIFECYCLE ASSURANCE",date:"2026.08.09",read:"12 MIN",title:"모바일 서비스 전체 라이프사이클을 자동화하고 검증하는 방법",summary:"Production → Lab → Pre-production → Production을 하나의 품질 루프로 연결하고, Evolver의 자동화와 Active Monitoring으로 지속 검증하는 방법을 설명합니다.",tags:["Evolver","Lifecycle","Automation"] },
   { slug:"conventional-5g-testing-vs-emblasoft",category:"TEST MODERNIZATION",date:"2026.08.06",read:"14 MIN",title:"기존 5G 테스트 방식이 놓치는 것",summary:"장비 단위 시험과 단순 부하 측정의 한계를 짚고, 실제 UE 행동·트래픽 모델·E2E 자동화·Active/Passive Monitoring으로 해결하는 방법을 설명합니다.",tags:["5G Test","UE Emulation","Service Assurance"] },
   { slug:"cpe-automation-sip-ims",category:"CPE AUTOMATION",date:"2026.08.06",read:"10 MIN",title:"CPE 테스트, 아직도 수작업으로 하나요?",summary:"SIP/IMS CPE의 등록·재등록, 오류 응답, 유지보수 모드와 긴급통화를 자동 검증하는 방법과 유럽 통신사 사례를 설명합니다.",tags:["CPE","SIP/IMS","Automation"] },
   { slug:"lab-to-field-service-assurance",category:"LAB-TO-FIELD",read:"9 MIN",title:"Lab-to-Field 검증 및 서비스 품질 보증",summary:"연구실의 반복 시험을 현장 인수와 운영망의 지속적인 서비스 보증으로 연결하는 방법입니다.",tags:["Service Assurance","Field Test","QoE"] },
