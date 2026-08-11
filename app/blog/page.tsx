@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "기술 블로그", description: "5G·5G-Advanced·6G 네트워크 시험, UE 에뮬레이션, 자동화 및 서비스 보증 인사이트" };
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const posts = [
+  { slug:"kaloom-upf-realistic-traffic-validation",category:"5G CORE · CASE STUDY",date:"2026.08.11",read:"13 MIN",title:"5G UPF, 최대 처리량만 보면 안 되는 이유",summary:"Emblasoft-Kaloom 사례를 바탕으로 N4/PFCP, N9, QoS, Usage Reporting과 장애 조건을 결합해 UPF를 실서비스 환경에 가깝게 검증하는 방법과 국내 적용 방안을 설명합니다.",tags:["UPF","Kaloom","PFCP"] },
   { slug:"mobile-service-lifecycle-automation-evolver",category:"LIFECYCLE ASSURANCE",date:"2026.08.09",read:"12 MIN",title:"모바일 서비스 전체 라이프사이클을 자동화하고 검증하는 방법",summary:"Production → Lab → Pre-production → Production을 하나의 품질 루프로 연결하고, Evolver의 자동화와 Active Monitoring으로 지속 검증하는 방법을 설명합니다.",tags:["Evolver","Lifecycle","Automation"] },
   { slug:"cpe-automation-sip-ims",category:"CPE AUTOMATION",date:"2026.08.09",read:"13 MIN",title:"수백만 대의 CPE, 어떻게 지속적으로 검증할 것인가?",summary:"Emblasoft의 2026년 7월 22일 CPE 자료와 유럽 통신사 사례를 바탕으로 소프트웨어·보안 패치, SIP/IMS 기능, 상태 전이와 Active Monitoring을 전체 CPE Estate 관점에서 설명합니다.",tags:["CPE","Evolver","Active Monitoring"] },
   { slug:"conventional-5g-testing-vs-emblasoft",category:"TEST MODERNIZATION",date:"2026.08.06",read:"14 MIN",title:"기존 5G 테스트 방식이 놓치는 것",summary:"장비 단위 시험과 단순 부하 측정의 한계를 짚고, 실제 UE 행동·트래픽 모델·E2E 자동화·Active/Passive Monitoring으로 해결하는 방법을 설명합니다.",tags:["5G Test","UE Emulation","Service Assurance"] },
