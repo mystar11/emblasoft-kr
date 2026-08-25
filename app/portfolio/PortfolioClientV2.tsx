@@ -282,7 +282,7 @@ export default function PortfolioClientV2() {
 
       <section className={styles.careerSection} id="career"><div className={styles.section}>
         <div className={styles.sectionHeading}><div><span>02 / CAREER</span><h2>{t.careerTitle}</h2></div><p>{t.careerIntro}</p></div>
-        <div className={styles.timeline}>{career.map((item)=><article key={`${item.period}-${item.company}`}><time>{item.period}</time><div><h3>{item.company}</h3><b>{item.role}</b><p>{item.body}</p><ul style={{margin:"12px 0 0",paddingLeft:18,color:"#536578",fontSize:12,lineHeight:1.75}}>{item.projects.map(p=><li key={p}>{p}</li>)}</ul><div style={{marginTop:9}}>{item.metrics.map(m=><strong key={m} style={{display:"inline-block",border:"1px solid #cfd9e1",borderRadius:999,padding:"6px 10px",margin:"5px 6px 0 0",fontSize:10,color:"#1261ff"}}>{m}</strong>)}</div>{item.note && <small>{item.note}</small>}</div></article>)}</div>
+        <div className={styles.timeline}>{career.map((item)=><article key={`${item.period}-${item.company}`}><time>{item.period}</time><div><h3>{item.company}</h3><b>{item.role}</b><p>{item.body}</p><ul style={{margin:"12px 0 0",paddingLeft:18,color:"#536578",fontSize:12,lineHeight:1.75}}>{item.projects.map(p=><li key={p}>{p}</li>)}</ul><div style={{marginTop:9}}>{item.metrics.map(m=><strong key={m} style={{display:"inline-block",border:"1px solid #cfd9e1",borderRadius:999,padding:"6px 10px",margin:"5px 6px 0 0",fontSize:10,color:"#1261ff"}}>{m}</strong>)}</div>{"note" in item && item.note && <small>{item.note}</small>}</div></article>)}</div>
       </div></section>
 
       <section className={styles.section} id="impact">
