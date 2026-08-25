@@ -9,7 +9,7 @@ const text = {
   ko: {
     nav: ["프로필", "경력", "성과", "자격"],
     contact: "연락처",
-    heroTitle: "통신·ICT 사업총괄",
+    heroTitle: "Executive Profile",
     heroLead: "30년 이상의 통신·ICT 경력. 네트워크 설계·구축·유지관리, 글로벌 벤더 Korea Country Management, 신규사업 개발 및 사업화 경험 보유.",
     careerButton: "주요 경력",
     profileLabel: "EXECUTIVE PROFILE",
@@ -41,7 +41,7 @@ const text = {
   en: {
     nav: ["Profile", "Career", "Impact", "Credentials"],
     contact: "Contact",
-    heroTitle: "Telecom & ICT Business Leadership",
+    heroTitle: "Executive Profile",
     heroLead: "30+ years across telecom and ICT, covering network design, deployment and maintenance, Korea country management for global vendors, new-business development and commercialization.",
     careerButton: "Career Profile",
     profileLabel: "EXECUTIVE PROFILE",
